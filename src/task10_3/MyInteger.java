@@ -1,14 +1,6 @@
 package task10_3;
 
-public class MyInteger {
-    private final int value;
-    public MyInteger(int value) {
-        this.value = value;
-    }
-
-    public int getValue() {
-        return value;
-    }
+public record MyInteger(int value) {
 
 
     public boolean isEven() {
@@ -62,16 +54,8 @@ public class MyInteger {
     }
 
     public boolean equals(MyInteger n) {
-        return value == n.getValue();
+        return value == n.value();
     }
 
-
-    public static int parseInt(char[] chars) {
-        int num = 0;
-        for (char c : chars) {
-            num = num * 10 + (c - '0');
-        }
-        return num;
-    }
 
 }
